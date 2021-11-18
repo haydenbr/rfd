@@ -10,18 +10,20 @@ fi
 
 latest_rfd=$(git ls-remote --heads origin |\
     sed "s?.*refs/heads/??" |\
-    grep -e "[0-9]" |\
+    grep -e "rfd[0-9]" |\
     sort -r |\
-    head -n 1)
-next_rfd=$(printf "%04d" $(($latest_rfd + 1)))
+    head -n 1 |\
+    sed "s?.*rfd??")
+next_rfd=rfd$(($latest_rfd + 1))
 
 git checkout -b $next_rfd
 
-mkdir text/$next_rfd
-cat scripts/0000-template.md |\
+next_rfd_dir=text/$next_rfd
+mkdir $next_rfd_dir
+cat scripts/template.md |\
     sed "s/{TITLE}/$title/" |\
-    sed "s/{START_DATE}/$date/" > text/$next_rfd/README.md
+    sed "s/{START_DATE}/$date/" > $next_rfd_dir/README.md
 
-git add text/$next_rfd
+git add $next_rfd_dir
 git commit -m "initial commit for RFD $next_rfd"
 git push -u origin $next_rfd

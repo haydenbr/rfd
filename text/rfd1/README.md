@@ -8,7 +8,7 @@ state: implemented
 
 ## Summary
 
-This proposal introduces a workflow and format for RFDs (Request For Discussion)so that we can have transparent and constructive discussions primarly for, but not limited to (1) ideas for new features, processes, or design patterns and (2) changes to current systems. An RFD may be proactive, as in "Hey, we have this idea for a thing we think we should do." Or an RFD might be reactive, as in "Oh dang, we have a big product feature we need to add so it'd be better if we wrote up an RFD to chart out our plan of attack."
+This proposal introduces a workflow and format for RFDs (Request For Discussion)so that we can have transparent and constructive discussions primarily for, but not limited to (1) ideas for new features, processes, or design patterns and (2) changes to current systems. An RFD may be proactive, as in "Hey, we have this idea for a thing we think we should do." Or an RFD might be reactive, as in "Oh dang, we have a big product feature we need to add so it'd be better if we wrote up an RFD to chart out our plan of attack."
 
 ## Motivation
 
@@ -90,7 +90,7 @@ An RFD can remain in __prediscussion__ for as long as is necessary as you iterat
 
 #### Discussion
 
-Pull Requests are the vehicle for RFD discussion. When you're ready to start discussing, change the state to __discussion__, make sure all your changes are pushed, then open a PR into `master`. If no one has reviewed your RFD, you may have to solicit feedback. Once the discussion has reach concensus, it's time to merge your PR and move the state to __committed__. Discussion and changes can still happen after publishing, though.
+Pull Requests are the vehicle for RFD discussion. When you're ready to start discussing, change the state to __discussion__, make sure all your changes are pushed, then open a PR into `master`. If no one has reviewed your RFD, you may have to solicit feedback. Once the discussion has reach consensus, it's time to merge your PR and move the state to __committed__. Discussion and changes can still happen after publishing, though.
 
 #### Implementation
 
@@ -98,9 +98,9 @@ Once the RFD has been completely implemented, move it to the __implemented__ sta
 
 ## Alternatives
 
-[ADRs (Architecture Decision Records)](https://github.com/joelparkerhenderson/architecture_decision_record/blob/master/adr_template_by_michael_nygard.md) were also suggested as a format for documentating these kinds of conversations. Personally, I'm not a huge fan of the ADR format because it seems a little more rigid in it's strucutre and more tailored to recording a past decision rather than fostering conversation on an idea. I could be wrong though, and ADRs could very likely be adapted to encourage open discussion.
+[ADRs (Architecture Decision Records)](https://github.com/joelparkerhenderson/architecture_decision_record/blob/master/adr_template_by_michael_nygard.md) were also suggested as a format for documenting these kinds of conversations. Personally, I'm not a huge fan of the ADR format because it seems a little more rigid in it's structure and more tailored to recording a past decision rather than fostering conversation on an idea. I could be wrong though, and ADRs could very likely be adapted to encourage open discussion.
 
-As a developer, I like using git, but there may be technical, non-developers (think product managers or customer success folks) who need to be a part of RFD conversations. If this is true, I would hate for git to exclude them from these conversations and we miss out on their feedback, in which case something like Confluence might be a better medium for RFDs. PRs allow for a more nuanced discussion process, but if Confluence invites more exposure, then maybe that's an acceptalbe trade-off.
+As a developer, I like using git, but there may be technical, non-developers (think product managers or customer success folks) who need to be a part of RFD conversations. If this is true, I would hate for git to exclude them from these conversations and we miss out on their feedback, in which case something like Confluence might be a better medium for RFDs. PRs allow for a more nuanced discussion process, but if Confluence invites more exposure, then maybe that's an acceptable trade-off.
 
 And in an exciting turn of events, it turns out that we might use Notion as an organization at some point. That would be really exciting and Notion could be a nice medium for RFDs. In the near future, that might be a thing.
 
@@ -117,13 +117,13 @@ Parts of this document are shamelessly copy-pasted from other sources. The docum
 ## Unresolved Questions
 
 - Should each RFD have its own directory under `text`? This might allow for a little more flexibility, especially if the RFD includes images. _Yes. This is the current state of the world now._
-- How do we track when one RFD supercedes or partly supercedes another? Should we add metadata field `superceded by: <link(s) to superceding RFD>`?
+- How do we track when one RFD supersedes or partly supersedes another? Should we add metadata field `superceded by: <link(s) to superceding RFD>`?
 - How do we establish consensus?
-- One area that I'm particularly looking for feedback on is the states. I'm not completely sold on the states listed here. I just copied them from someone else so please chime in if you feel like someting is missing or have strong feelings about what the states should be.
+- One area that I'm particularly looking for feedback on is the states. I'm not completely sold on the states listed here. I just copied them from someone else so please chime in if you feel like something is missing or have strong feelings about what the states should be.
 
 ## Future Possibilities
 
-In the future, we could add some simple automation around RFDs. For example, we could have github actions handle things like validate states or change state based on some event. One could also imagine git hooks being useful for enforcing commit message format, directory strucuture, etc.
+In the future, we could add some simple automation around RFDs. For example, we could have github actions handle things like validate states or change state based on some event. One could also imagine git hooks being useful for enforcing commit message format, directory structure, etc.
 
 Some might want to consume RFDs in a different format so we could publish the markdown files as html, pdf, or whatever else is needed.
 
