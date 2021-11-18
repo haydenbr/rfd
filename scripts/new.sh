@@ -14,16 +14,16 @@ latest_rfd=$(git ls-remote --heads origin |\
     sort -r |\
     head -n 1 |\
     sed "s?.*rfd??")
+
 next_rfd=rfd$(($latest_rfd + 1))
+next_rfd_dir=text/$next_rfd
 
 git checkout -b $next_rfd
-
-next_rfd_dir=text/$next_rfd
 mkdir $next_rfd_dir
 cat scripts/template.md |\
     sed "s/{TITLE}/$title/" |\
     sed "s/{START_DATE}/$date/" > $next_rfd_dir/README.md
 
 git add $next_rfd_dir
-git commit -m "initial commit for RFD $next_rfd"
+git commit -m "initial commit for $next_rfd"
 git push -u origin $next_rfd
